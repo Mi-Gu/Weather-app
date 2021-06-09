@@ -1,0 +1,98 @@
+body {
+  font-family: "Baloo Tammudu 2", cursive;
+  background: linear-gradient(15deg, #c9ecf7 0%, #1584b8 100%);
+  color: #1584b8;
+  font-size: 18px;
+  max-width: 100%;
+}
+form {
+  padding: 30px;
+}
+header {
+  padding-top: 80px;
+  padding-bottom: 20px;
+  padding-left: 110px;
+  padding-right: 110px;
+}
+header h1.card-title {
+  text-align: center;
+  font-size: 88px;
+}
+header h2 {
+  text-align: center;
+  font-size: 88px;
+}
+header h3 {
+  font-weight: 800;
+  font-size: 48px;
+}
+header .card-body {
+  text-align: left;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+section {
+  padding-top: 180px;
+  padding-bottom: 100px;
+}
+.btn {
+  vertical-align: top;
+}
+.btn:hover {
+  background-color: transparent;
+}
+.btn.btn-outline-secondary {
+  line-height: 18px;
+  border: none;
+  color: #1584b8;
+  font-size: 22px;
+}
+.btn.btn-outline-secondary:hover {
+  color: #c4c7ca;
+  border: none;
+}
+.card {
+  background-color: transparent;
+  border: none;
+  word-wrap: normal;
+  display: block;
+  margin: 0 auto;
+}
+.fas.fa-cloud {
+  color: rgb(126, 126, 126);
+}
+.UVDefinition {
+  color: rgb(196, 22, 22);
+  font-weight: bolder;
+}
+.fas.fa-wind {
+  color: #dddddd;
+}
+section .card {
+  border: 2px solid #dddddd;
+  border-radius: 8px;
+}
+section .card-title {
+  font-size: 32px;
+}
+.card-body {
+  text-align: center;
+}
+.card-text {
+  text-align: center;
+}
+.fas.fa-sun {
+  color: rgba(255, 166, 0, 0.918);
+}
+.fas.fa-cloud-sun {
+  color: rgb(54, 184, 235);
+}
+.fas.fa-cloud-sun-rain {
+  color: rgb(54, 184, 235);
+}
+.fas.fa-cloud-showers-heavy {
+  color: rgb(126, 126, 126);
+}
+.fas.fa-cloud-rain {
+  color: rgb(126, 126, 126);
+}
