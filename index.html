@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f8567d69ef.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Week5 new homework</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <div class="row">
+      <div class="col-2">
+        <form id="search-field">
+          <input type="text" placeholder="Type a city..." id="cityId" />
+        </form>
+      </div>
+      <div class="col-1">
+        <button type="button" class="btn btn-outline-secondary">
+          <strong><i class="fas fa-search"></i></strong>
+        </button>
+      </div>
+      <div class="col-1">
+        <button
+          type="button"
+          class="btn btn-outline-light"
+          id="current-location"
+        >
+          Current location
+        </button>
+      </div>
+    </div>
+    <br />
+    <header>
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="card-title">
+                <span id="temperature">21</span>
+                <span id="metric"> °C </span>
+              </h1>
+              <h2><i class="fas fa-sun"></i></h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">
+                <strong id="city"></strong>
+              </h3>
+              <h4>Sun 15/05/2021</h4>
+              <br />
+              <p class="card-text"></p>
+              <div>
+                <i class="fas fa-cloud"></i>
+                <span><strong id="cloudiness"></strong></span>
+                <strong>%</strong>
+              </div>
+              <div>
+                <span><strong>Description</strong></span
+                ><span class="UVDefinition" id="description"></span>
+              </div>
+              <div>
+                <i class="fas fa-wind"></i
+                ><span
+                  ><strong id="windSpeed"></strong
+                  ><strong> min/sec</strong></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </header>
+    <section>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-cloud-rain"></i></h5>
+              <div class="card-text">
+                <strong>Mon</strong>
+              </div>
+              <div class="card-text"><span>27°C | 23°C</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-cloud-sun-rain"></i></h5>
+              <div class="card-text"><strong>Tue</strong></div>
+              <div class="card-text">32°C | 24°C</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="fas fa-cloud-showers-heavy"></i>
+              </h5>
+              <div class="card-text"><strong>Wed</strong></div>
+              <div class="card-text">32°C | 17°C</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-cloud-sun"></i></h5>
+              <div class="card-text"><strong>Thu</strong></div>
+              <div class="card-text">21°C | 16°C</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-sun"></i></h5>
+              <div class="card-text"><strong>Fri</strong></div>
+              <div class="card-text">26°C | 17°C</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </section>
+    <script>
+      let now = new Date();
+      let h4 = document.querySelector("h4");
+      days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      let day = days[now.getDay()];
+      let date = now.getDate();
+      months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      let month = months[now.getMonth()];
+      let year = now.getFullYear();
+      let minutes = now.getMinutes();
+      let hours = now.getHours();
+      h4.innerHTML = `${day} ${date} ${month} ${year} - ${hours}:${minutes}`;
+
+      function showTemperature(response) {
+        document.querySelector("#city").innerHTML = response.data.name;
+        document.querySelector("#temperature").innerHTML = Math.round(
+          response.data.main.temp
+        );
+        document.querySelector("#cloudiness").innerHTML =
+          response.data.clouds.all;
+        document.querySelector("#description").innerHTML =
+          response.data.weather[0].description;
+        document.querySelector("#windSpeed").innerHTML = Math.round(
+          response.data.wind.speed
+        );
+      }
+
+      function searchCity(city) {
+        let apiKey = "2861ea5df6b9b5ec04d78330165cba84";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(showTemperature);
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        let city = document.querySelector("#cityId").value;
+        searchCity(city);
+      }
+
+      function searchLocation(position) {
+        let apiKey = "2861ea5df6b9b5ec04d78330165cba84";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(showTemperature);
+      }
+
+      function getCurrentLocation(event) {
+        event.preventDefault();
+        navigator.geolocation.getCurrentPosition(searchLocation);
+      }
+
+      let searchForm = document.querySelector("#search-field");
+      searchForm.addEventListener("submit", handleSubmit);
+
+      let currentLocation = document.querySelector("#current-location");
+      currentLocation.addEventListener("click", getCurrentLocation);
+
+      searchCity("Amsterdam");
+    </script>
+  </body>
+</html>
