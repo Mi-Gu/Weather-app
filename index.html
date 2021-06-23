@@ -26,26 +26,32 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-2">
+        <div class="col-3">
           <form id="search-field">
-            <input type="text" placeholder="Type a city..." id="cityId" />
+            <input
+              type="text"
+              placeholder="Type a city..."
+              id="cityId"
+              autocomplete="off"
+            />
+            <div class="col-3">
+              <button type="button" class="btn btn-outline-secondary">
+                <strong><i class="fas fa-search"></i></strong>
+              </button>
+            </div>
+            <div class="col-1">
+              <button
+                type="button"
+                class="btn btn-outline-light"
+                id="current-location"
+              >
+                Current location
+              </button>
+            </div>
           </form>
         </div>
-        <div class="col-1">
-          <button type="button" class="btn btn-outline-secondary">
-            <strong><i class="fas fa-search"></i></strong>
-          </button>
-        </div>
-        <div class="col-1">
-          <button
-            type="button"
-            class="btn btn-outline-light"
-            id="current-location"
-          >
-            Current location
-          </button>
-        </div>
       </div>
+
       <br />
       <header>
         <div class="row">
