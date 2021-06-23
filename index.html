@@ -24,135 +24,138 @@
     <title>Week5 new homework</title>
   </head>
   <body>
-    <div class="container"></div>
-    <div class="row">
-      <div class="col-2">
-        <form id="search-field">
-          <input type="text" placeholder="Type a city..." id="cityId" />
-        </form>
+    <div class="container">
+      <div class="row">
+        <div class="col-2">
+          <form id="search-field">
+            <input type="text" placeholder="Type a city..." id="cityId" />
+          </form>
+        </div>
+        <div class="col-1">
+          <button type="button" class="btn btn-outline-secondary">
+            <strong><i class="fas fa-search"></i></strong>
+          </button>
+        </div>
+        <div class="col-1">
+          <button
+            type="button"
+            class="btn btn-outline-light"
+            id="current-location"
+          >
+            Current location
+          </button>
+        </div>
       </div>
-      <div class="col-1">
-        <button type="button" class="btn btn-outline-secondary">
-          <strong><i class="fas fa-search"></i></strong>
-        </button>
-      </div>
-      <div class="col-1">
-        <button
-          type="button"
-          class="btn btn-outline-light"
-          id="current-location"
+      <br />
+      <header>
+        <div class="row">
+          <div class="col-3"></div>
+          <div class="col-sm-3">
+            <div class="card">
+              <div class="card-body">
+                <h1 class="card-title">
+                  <span id="temperature">21</span>
+                  <span id="metric"> °C </span>
+                </h1>
+                <h2><i class="fas fa-sun"></i></h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">
+                  <strong id="city"></strong>
+                </h3>
+                <h4>Sun 15/05/2021</h4>
+                <br />
+                <p class="card-text"></p>
+                <div>
+                  <i class="fas fa-cloud"></i>
+                  <span><strong id="cloudiness"></strong></span>
+                  <strong>%</strong>
+                </div>
+                <div>
+                  <span><strong>Description</strong></span
+                  ><span class="UVDefinition" id="description"></span>
+                </div>
+                <div>
+                  <i class="fas fa-wind"></i
+                  ><span
+                    ><strong id="windSpeed"></strong
+                    ><strong> min/sec</strong></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3"></div>
+        </div>
+      </header>
+      <section>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-cloud-rain"></i></h5>
+                <div class="card-text">
+                  <strong>Mon</strong>
+                </div>
+                <div class="card-text"><span>27°C | 23°C</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="fas fa-cloud-sun-rain"></i>
+                </h5>
+                <div class="card-text"><strong>Tue</strong></div>
+                <div class="card-text">32°C | 24°C</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </h5>
+                <div class="card-text"><strong>Wed</strong></div>
+                <div class="card-text">32°C | 17°C</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-cloud-sun"></i></h5>
+                <div class="card-text"><strong>Thu</strong></div>
+                <div class="card-text">21°C | 16°C</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-sun"></i></h5>
+                <div class="card-text"><strong>Fri</strong></div>
+                <div class="card-text">26°C | 17°C</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </section>
+      <footer>
+        <a href="https://github.com/Mi-Gu/Weather-app" target="_blank">
+          Open-source</a
         >
-          Current location
-        </button>
-      </div>
+        by Michele Gushlow
+      </footer>
     </div>
-    <br />
-    <header>
-      <div class="row">
-        <div class="col-3"></div>
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <h1 class="card-title">
-                <span id="temperature">21</span>
-                <span id="metric"> °C </span>
-              </h1>
-              <h2><i class="fas fa-sun"></i></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">
-                <strong id="city"></strong>
-              </h3>
-              <h4>Sun 15/05/2021</h4>
-              <br />
-              <p class="card-text"></p>
-              <div>
-                <i class="fas fa-cloud"></i>
-                <span><strong id="cloudiness"></strong></span>
-                <strong>%</strong>
-              </div>
-              <div>
-                <span><strong>Description</strong></span
-                ><span class="UVDefinition" id="description"></span>
-              </div>
-              <div>
-                <i class="fas fa-wind"></i
-                ><span
-                  ><strong id="windSpeed"></strong
-                  ><strong> min/sec</strong></span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3"></div>
-      </div>
-    </header>
-    <section>
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col-2">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-cloud-rain"></i></h5>
-              <div class="card-text">
-                <strong>Mon</strong>
-              </div>
-              <div class="card-text"><span>27°C | 23°C</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-cloud-sun-rain"></i></h5>
-              <div class="card-text"><strong>Tue</strong></div>
-              <div class="card-text">32°C | 24°C</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">
-                <i class="fas fa-cloud-showers-heavy"></i>
-              </h5>
-              <div class="card-text"><strong>Wed</strong></div>
-              <div class="card-text">32°C | 17°C</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-cloud-sun"></i></h5>
-              <div class="card-text"><strong>Thu</strong></div>
-              <div class="card-text">21°C | 16°C</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-sun"></i></h5>
-              <div class="card-text"><strong>Fri</strong></div>
-              <div class="card-text">26°C | 17°C</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-1"></div>
-      </div>
-    </section>
-    <footer>
-      <a href="https://github.com/Mi-Gu/Weather-app" target="_blank">
-        Open-source</a
-      >
-      by Michele Gushlow
-    </footer>
     <script src="script.js"></script>
   </body>
 </html>
